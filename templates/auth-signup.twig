@@ -1,0 +1,20 @@
+<section class="container" aria-labelledby="signup-heading">
+  <div class="card" style="max-width:480px;margin:4rem auto;">
+    <h1 id="signup-heading">Create your account</h1>
+    <p>Sign up to start tracking support tickets.</p>
+    <form id="signup-form" novalidate>
+      <label>
+        Email address
+        <input type="email" name="email" required autocomplete="email" placeholder="you@company.com">
+        <span class="inline-error" data-error="email"></span>
+      </label>
+      <label>
+        Password
+        <input type="password" name="password" required autocomplete="new-password" minlength="6" placeholder="At least 6 characters">
+        <span class="inline-error" data-error="password"></span>
+      </label>
+      <button type="submit" class="button">Create account</button>
+      <p>Already registered? <a href="/auth/login" data-link>Log in</a>.</p>
+    </form>
+  </div>
+</section>
