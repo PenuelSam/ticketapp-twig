@@ -1,0 +1,31 @@
+<section class="container" aria-labelledby="edit-heading" style="padding:3rem 0;">
+  <div class="card" style="max-width:680px;margin:0 auto;">
+    <h1 id="edit-heading">Edit ticket</h1>
+    <form id="ticket-edit-form" novalidate>
+      <input type="hidden" name="id">
+      <label>
+        Title
+        <input type="text" name="title" required>
+        <span class="inline-error" data-error="title"></span>
+      </label>
+      <label>
+        Status
+        <select name="status" required>
+          <option value="open">Open</option>
+          <option value="in_progress">In progress</option>
+          <option value="closed">Closed</option>
+        </select>
+        <span class="inline-error" data-error="status"></span>
+      </label>
+      <label>
+        Description
+        <textarea name="description" rows="5" placeholder="Details, reproduction steps, and context"></textarea>
+        <span class="inline-error" data-error="description"></span>
+      </label>
+      <div class="ticket-actions">
+        <button type="submit" class="button">Save changes</button>
+        <a href="/tickets" class="button secondary" data-link>Cancel</a>
+      </div>
+    </form>
+  </div>
+</section>
