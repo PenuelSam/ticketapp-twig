@@ -47,6 +47,7 @@ function twigTemplatePlugin() {
 }
 
 export default defineConfig({
+  root: '.',
   publicDir: 'public',
   plugins: [twigTemplatePlugin()],
   server: {
