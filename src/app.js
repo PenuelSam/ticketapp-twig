@@ -61,7 +61,7 @@ function initNavbar() {
   const navLinks = document.querySelector('.nav-links')
   const logoutBtn = document.getElementById('logout-btn')
 
-  // Handle mobile menu toggle
+
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('open')
@@ -72,7 +72,7 @@ function initNavbar() {
     })
   }
 
-  // Handle authentication state
+
   if (navLinks) {
     if (!isAuthenticated()) {
       navLinks.innerHTML = `
@@ -87,15 +87,12 @@ function initNavbar() {
  export function updateDashboardUser() {
   const session = getSession()
 
-  // Wait for element if not yet rendered
   const tryUpdate = () => {
     const emailEl = document.getElementById('user-email')
     if (!emailEl) {
-      // Retry after a short delay until it's rendered
       return setTimeout(tryUpdate, 50)
     }
 
-    // When found, update the text
     if (session && session.user && session.user.email) {
       emailEl.textContent = session.user.email
     } else {

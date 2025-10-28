@@ -39,7 +39,6 @@ export function handleRoute() {
   }
 
   renderPage(match.route, match.params)
-  // Wait for DOM insertion
 if (match.route.path === '/dashboard') {
   setTimeout(updateDashboardUser, 100)
 }
