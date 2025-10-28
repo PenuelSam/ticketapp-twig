@@ -302,18 +302,16 @@ form + p a:hover {
 }
 
 .badge.open {
-  background: rgba(99, 102, 241, 0.1);
-  color: var(--brand);
+  background: #81c7842f;
+  color: #81c784;
 }
-
 .badge.in_progress {
-  background: rgba(234, 179, 8, 0.1);
-  color: #ca8a04;
+  background: #ffc10728;
+  color: #ffc107;
 }
-
 .badge.closed {
-  background: rgba(16, 185, 129, 0.1);
-  color: #10b981;
+  background: #9e9e9e21;
+  color: #9e9e9e;
 }
 
 
@@ -409,10 +407,9 @@ form + p a:hover {
 
 /* Priority stays on the right */
 .ticket-priority {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.25rem;
+ display: flex;
+  gap: 5px;
+  align-items: center;
   color: var(--text-muted);
   font-size: 0.9rem;
 }
@@ -425,6 +422,7 @@ form + p a:hover {
 .ticket-top h2 {
   font-size: 1.25rem;
   margin: 0.25rem 0;
+  text-transform: capitalize;
 }
 .ticket-top p {
   color: var(--text-muted);
@@ -651,7 +649,7 @@ textarea {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   margin-top: 1rem;
 }
 

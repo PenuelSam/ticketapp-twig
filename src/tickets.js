@@ -73,7 +73,7 @@ function renderTickets(container) {
               <div class="ticket-header2">
                 <span class="badge ${ticket.status}">${formatStatus(ticket.status)}</span>
                 <div class="ticket-priority">
-                  <span>Priority</span>
+                  <span>Priority:</span>
                   <div>${escapeHtml(ticket.priority || '—')}</div>
                 </div>
               </div>
