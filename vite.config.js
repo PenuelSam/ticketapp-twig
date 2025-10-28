@@ -57,8 +57,6 @@ export default defineConfig({
   },
   build: {
     emptyOutDir: true,
-    rollupOptions: {
-      input: resolve(process.cwd(), 'public/index.html'),
-    },
+  
   },
 })
