@@ -1,20 +1,49 @@
-<section class="container" aria-labelledby="login-heading">
-  <div class="card" style="max-width:480px;margin:4rem auto;">
-    <h1 id="login-heading">Welcome back</h1>
-    <p>Log in to continue to your workspace.</p>
-    <form id="login-form" novalidate>
-      <label>
-        Email address
-        <input type="email" name="email" required autocomplete="email" placeholder="you@company.com">
-        <span class="inline-error" data-error="email"></span>
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" required autocomplete="current-password" placeholder="••••••••">
-        <span class="inline-error" data-error="password"></span>
-      </label>
-      <button type="submit" class="button">Login</button>
-      <p>Need an account? <a href="/auth/signup" data-link>Sign up</a>.</p>
-    </form>
-  </div>
-</section>
+
+    <div class="layout">
+
+      <!-- LOGIN FORM -->
+      <main class="layout-main" style="display:flex;justify-content:center;padding-top:4rem;">
+        <div class="container" style="max-width:520px;">
+          <div class="card">
+            <h1 style="margin:0;font-size:2rem;font-weight:700;">Welcome back</h1>
+            <p style="color:var(--text-muted);">Log in to continue to your workspace.</p>
+
+            <form id="login-form" class="form" novalidate>
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                />
+                <span class="field-error" data-error="email"></span>
+              </div>
+
+              <div class="field">
+                <label for="password">Password</label>
+                <input
+                  id="password"
+                  type="password"
+                  name="password"
+                  required
+                  placeholder="••••••••"
+                  autocomplete="current-password"
+                />
+                <span class="field-error" data-error="password"></span>
+              </div>
+
+              <button type="submit" class="button button-primary" style="width:100%;">Log in</button>
+            </form>
+
+            <p style="color:var(--text-muted);margin-top:1rem;text-align:center;">
+              Need an account? <a href="/auth/signup">Sign up</a>
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+

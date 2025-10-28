@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TicketApp Twig</title>
+    <link rel="stylesheet" href="/assets/tokens.css" />
+  </head>
+  <body>
+    <header class="nav">
+  <nav class="navbar" aria-label="Primary navigation">
+    <div class="nav-brand">
+      <a href="/" class="nav-logo" data-link>TicketApp</a>
+
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="nav-links">
+      <a href="/dashboard" data-link>Dashboard</a>
+      <a href="/tickets" data-link>Tickets</a>
+      <div class="nav-user">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="7" r="4" />
+          <path d="M5.5 21a8.38 8.38 0 0 1 13 0" />
+        </svg>
+      </div>
+      <button id="logout-btn" class="button button-secondary">Logout</button>
+    </div>
+  </nav>
+</header>
+
+    <main id="app"></main>
+    <footer class="site-footer">
+  <div class="footer-inner container">
+    <div class="footer-links-grid">
+      <div class="footer-col">
+        <h3>Products</h3>
+        <ul>
+          <li><a href="/mac">Mac</a></li>
+          <li><a href="/ipad">iPad</a></li>
+          <li><a href="/iphone">iPhone</a></li>
+          <li><a href="/watch">Watch</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="/help">Help Center</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/news">Newsroom</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+          <li><a href="/sitemap">Site Map</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p>© 2025 TicketApp. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+# ----------------------------
+# Node / Frontend dependencies
+# ----------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+
+# ----------------------------
+# Build outputs
+# ----------------------------
+dist/
+build/
+.cache/
+.tmp/
+.vite/
+public/build/
+
+# ----------------------------
+# Environment and configuration
+# ----------------------------
+.env
+.env.local
+.env.*.local
+
+# ----------------------------
+# IDE / Editor files
+# ----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# ----------------------------
+# System files
+# ----------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----------------------------
+# Logs and temporary files
+# ----------------------------
+*.log
+*.tmp
+*.bak
+*.lock
+*.orig
+
+# ----------------------------
+# Composer / PHP cache (if ever used)
+# ----------------------------
+vendor/
+composer.lock
+var/
+cache/
+
+# ----------------------------
+# Misc
+# ----------------------------
+*.zip
+*.tar.gz

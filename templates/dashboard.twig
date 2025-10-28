@@ -1,23 +1,52 @@
-<section class="container" aria-labelledby="dashboard-heading" style="padding:3rem 0;">
-  <header style="margin-bottom:2rem;">
-    <h1 id="dashboard-heading">Support performance</h1>
-    <p>Track ticket activity, monitor status, and keep your team focused.</p>
-  </header>
-  <div class="grid stats-grid" id="dashboard-stats">
-    <article class="card">
-      <h2>Total tickets</h2>
-      <p class="stat-number" data-stat="total">0</p>
-    </article>
-    <article class="card">
-      <h2>Open</h2>
-      <p class="stat-number" data-stat="open">0</p>
-    </article>
-    <article class="card">
-      <h2>Resolved</h2>
-      <p class="stat-number" data-stat="closed">0</p>
-    </article>
-  </div>
-  <div style="margin-top:3rem;">
-    <a href="/tickets" class="button" data-link>Manage tickets</a>
-  </div>
-</section>
+
+    <div class="layout">
+     
+
+      <!-- DASHBOARD CONTENT -->
+      <main id="app" class="layout-main">
+        <div class="container">
+          <!-- Header Section -->
+          <section class="dashboard-header">
+            <h1 class="dashboard-title">Welcome back, <span id="user-email"></span>!</h1>
+            <p class="dashboard-text">
+              View the health of your support pipeline at a glance. Stay ahead of the queue and keep
+              your customers delighted.
+            </p>
+            <div class="dashboard-actions">
+              <button class="button button-primary" onclick="location.href='/tickets'">
+                Manage tickets
+              </button>
+              <button class="button button-secondary" onclick="location.href='/tickets'">
+                View all tickets
+              </button>
+            </div>
+          </section>
+
+          <!-- Metrics Section -->
+          <section class="card-grid" id="dashboard-metrics">
+            <div class="card">
+              <span class="metric-label">Total tickets</span>
+              <div class="metric-value" id="metric-total" data-stat="total">0</div>
+              <p class="metric-description">All requests currently tracked in the workspace.</p>
+            </div>
+
+            <div class="card">
+              <span class="metric-label">Open</span>
+              <div class="metric-value" id="metric-open" data-stat="open">0</div>
+              <p class="metric-description">Tickets awaiting an initial response or action.</p>
+            </div>
+
+            <div class="card">
+              <span class="metric-label">Resolved</span>
+              <div class="metric-value" id="metric-resolved" data-stat="resolved">0</div>
+              <p class="metric-description">Tickets marked as closed by the team.</p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+
+
+
+

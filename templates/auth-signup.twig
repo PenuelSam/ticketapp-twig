@@ -1,20 +1,63 @@
-<section class="container" aria-labelledby="signup-heading">
-  <div class="card" style="max-width:480px;margin:4rem auto;">
-    <h1 id="signup-heading">Create your account</h1>
-    <p>Sign up to start tracking support tickets.</p>
-    <form id="signup-form" novalidate>
-      <label>
-        Email address
-        <input type="email" name="email" required autocomplete="email" placeholder="you@company.com">
-        <span class="inline-error" data-error="email"></span>
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" required autocomplete="new-password" minlength="6" placeholder="At least 6 characters">
-        <span class="inline-error" data-error="password"></span>
-      </label>
-      <button type="submit" class="button">Create account</button>
-      <p>Already registered? <a href="/auth/login" data-link>Log in</a>.</p>
-    </form>
-  </div>
-</section>
+
+    <div class="layout">
+
+      <!-- SIGNUP FORM -->
+      <main class="layout-main" style="display:flex;justify-content:center;padding-top:4rem;">
+        <div class="container" style="max-width:520px;">
+          <div class="card">
+            <h1 style="margin:0;font-size:2rem;font-weight:700;">Create your workspace</h1>
+            <p style="color:var(--text-muted);">Sign up to start tracking support tickets.</p>
+
+            <form id="signup-form" class="form" novalidate>
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                />
+                <span class="field-error" data-error="email"></span>
+              </div>
+
+              <div class="field">
+                <label for="password">Password</label>
+                <input
+                  id="password"
+                  type="password"
+                  name="password"
+                  required
+                  minlength="6"
+                  placeholder="Create a password"
+                  autocomplete="new-password"
+                />
+                <span class="field-error" data-error="password"></span>
+              </div>
+
+              <div class="field">
+                <label for="confirm-password">Confirm password</label>
+                <input
+                  id="confirm-password"
+                  type="password"
+                  name="confirmPassword"
+                  required
+                  placeholder="Repeat your password"
+                  autocomplete="new-password"
+                />
+                <span class="field-error" data-error="confirmPassword"></span>
+              </div>
+
+              <button type="submit" class="button button-primary" style="width:100%;">Create account</button>
+            </form>
+
+            <p style="color:var(--text-muted);margin-top:1rem;text-align:center;">
+              Already have an account? <a href="/auth/login">Log in</a>
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+ 

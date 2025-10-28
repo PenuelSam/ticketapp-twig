@@ -62,28 +62,43 @@ function renderTickets(container) {
     return
   }
 
-  container.innerHTML = tickets
-    .map((ticket) => {
-      const createdAt = ticket.createdAt ? new Date(ticket.createdAt).toLocaleString() : ''
-      return `
-        <article class="card ticket-card" role="listitem">
-          <header style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
-            <h3>${escapeHtml(ticket.title)}</h3>
-            <span class="badge ${ticket.status}">${formatStatus(ticket.status)}</span>
-          </header>
-          <p>${escapeHtml(ticket.description || 'No description provided.')}</p>
-          <div class="status-indicator">
-            <span>Created</span>
-            <time datetime="${ticket.createdAt || ''}">${createdAt}</time>
-          </div>
-          <div class="ticket-actions" style="margin-top:1rem;">
-            <button class="button secondary" data-action="edit" data-id="${ticket.id}">Edit</button>
-            <button class="button outline" data-action="delete" data-id="${ticket.id}">Delete</button>
-          </div>
-        </article>
-      `
-    })
-    .join('')
+  container.innerHTML = `
+  <div class="ticket-grid">
+    ${tickets
+      .map((ticket) => {
+        const createdAt = ticket.createdAt ? new Date(ticket.createdAt).toLocaleString() : ''
+        return `
+          <article class="card ticket-card" role="listitem">
+            <div class="ticket-top">
+              <div class="ticket-header2">
+                <span class="badge ${ticket.status}">${formatStatus(ticket.status)}</span>
+                <div class="ticket-priority">
+                  <span>Priority</span>
+                  <div>${escapeHtml(ticket.priority || '—')}</div>
+                </div>
+              </div>
+
+              <h2>${escapeHtml(ticket.title)}</h2>
+              <p>${escapeHtml(ticket.description || 'No description provided.')}</p>
+            </div>
+
+            <div class="ticket-bottom">
+              <div class="ticket-updated">
+                Created <time datetime="${ticket.createdAt || ''}">${createdAt}</time>
+              </div>
+              <div class="ticket-actions">
+                <button class="button button-secondary" data-action="edit" data-id="${ticket.id}">Edit</button>
+                <button class="button button-secondary button-outline" data-action="delete" data-id="${ticket.id}">Delete</button>
+              </div>
+            </div>
+          </article>
+        `
+      })
+      .join('')}
+  </div>
+`
+
+
 }
 
 function openTicketModal(listEl) {
@@ -93,36 +108,54 @@ function openTicketModal(listEl) {
   const backdrop = document.createElement('div')
   backdrop.className = 'modal-backdrop'
   backdrop.innerHTML = `
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="new-ticket-heading">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="new-ticket-heading">
+    <div class="modal-content form-card">
       <button class="modal-close" aria-label="Close" type="button">×</button>
-      <h2 id="new-ticket-heading">New ticket</h2>
-      <form id="ticket-form" novalidate>
-        <label>
-          Title
-          <input type="text" name="title" required placeholder="Issue summary">
-          <span class="inline-error" data-error="title"></span>
-        </label>
-        <label>
-          Status
-          <select name="status" required>
-            <option value="open" selected>Open</option>
-            <option value="in_progress">In progress</option>
-            <option value="closed">Closed</option>
-          </select>
-          <span class="inline-error" data-error="status"></span>
-        </label>
-        <label>
-          Description
-          <textarea name="description" rows="4" placeholder="Add details to help resolve the request"></textarea>
-          <span class="inline-error" data-error="description"></span>
-        </label>
-        <div class="ticket-actions" style="margin-top:1rem;">
-          <button type="submit" class="button">Create ticket</button>
-          <button type="button" class="button secondary" data-close>Cancel</button>
+      <h2 id="new-ticket-heading" class="form-title">New Ticket</h2>
+
+      <form id="ticket-form" class="form" novalidate>
+        <div class="field">
+          <label for="title">Title</label>
+          <input id="title" type="text" name="title" required placeholder="Brief ticket summary">
+          <span class="field-error" data-error="title"></span>
+        </div>
+
+        <div class="field">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="4" placeholder="Add details to help resolve the request"></textarea>
+          <span class="field-error" data-error="description"></span>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="status">Status</label>
+            <select id="status" name="status" required>
+              <option value="open" selected>Open</option>
+              <option value="in_progress">In progress</option>
+              <option value="closed">Closed</option>
+            </select>
+            <span class="field-error" data-error="status"></span>
+          </div>
+
+          <div class="field">
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="button button-secondary" data-close>Cancel</button>
+          <button type="submit" class="button button-primary">Create Ticket</button>
         </div>
       </form>
     </div>
-  `
+  </div>
+`
+
 
   root.appendChild(backdrop)
 

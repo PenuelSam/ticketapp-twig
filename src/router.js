@@ -1,6 +1,7 @@
 import { renderPage } from './ui.js'
 import { isAuthenticated } from './auth.js'
 import { toast } from './toast.js'
+import { updateDashboardUser } from './app.js'
 
 export const routes = [
   { path: '/', template: 'landing', auth: false },
@@ -38,7 +39,12 @@ export function handleRoute() {
   }
 
   renderPage(match.route, match.params)
+  // Wait for DOM insertion
+if (match.route.path === '/dashboard') {
+  setTimeout(updateDashboardUser, 100)
 }
+}
+
 
 function matchRoute(path) {
   for (const route of routes) {
