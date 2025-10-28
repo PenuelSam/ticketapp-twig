@@ -255,7 +255,7 @@ form + p a:hover {
 .dashboard-actions {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 /* Card grid layout */
