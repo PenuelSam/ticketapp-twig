@@ -49,14 +49,16 @@ function twigTemplatePlugin() {
 export default defineConfig({
   root: '.',
   publicDir: 'public',
+  base: '/', 
   plugins: [twigTemplatePlugin()],
   server: {
     fs: {
       allow: ['.'],
     },
+    historyApiFallback: true, 
   },
   build: {
     emptyOutDir: true,
-  
+    outDir: 'dist',
   },
 })
